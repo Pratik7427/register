@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+
+
+        <form action="/#">
+
+            <div>
+                <h2>Register</h2>
+            </div>
+            <div>
+                <label for="username">Username</label><br>
+                <input type="text" id="username" name="username" placeholder="Username" class="forwhite" required>
+            </div>
+
+            <div>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" class="forwhite" placeholder="Email" required>
+            </div>
+
+            <div>
+                <label for="number">Phone Number</label><br>
+                <input maxlength="10"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    onkeydown="javascript: return event.keyCode == 69 ? false : true" type="number" id="number"
+                    class="forwhite" name="number" placeholder="Phone Number" required>
+            </div>
+
+            <div class="form-field">
+                <div class="choose-file">
+                    <li> <img id="blah" src="https://www.w3schools.com/howto/img_avatar.png" alt="none" /></li>
+                    <li> <label for="imgInp" class="upload-btn"> Upload Here</label></li>
+                </div>
+
+                <input accept="image/*" type='file' id="imgInp" class="fileUpload" />
+
+
+
+
+            </div>
+
+            <div>
+                <label for="password-field">Password</label><br>
+                <input type="password" class="forwhite" id="password-field" name="password" placeholder="Password"
+                    onkeyup="chang(this)" required>
+                <i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
+
+            </div>
+
+            <div>
+                <label for="confirm">Confirm Password</label><br>
+                <input type="password" id="confirm" class="forwhite" name="password" onkeyup="change(this)"
+                    placeholder="Confirm Password" required>
+                <i id="pass-status1" class="fa fa-eye" aria-hidden="true" onClick="viewConfirmPassword()"></i>
+                <center>
+                    <p class="show"></p>
+                </center>
+
+
+            </div>
+
+            <div>
+                <button onClick="func()">Register</button>
+            </div>
+
+
+
+        </form>
+    </div>
+
+
+</body>
+<script src="app.js"></script>
+<script>
+    imgInp.onchange=evt => {
+        const [file]=imgInp.files
+        if (file) {
+            blah.src=URL.createObjectURL(file)
+        }
+    }
+</script>
+
+</html>
